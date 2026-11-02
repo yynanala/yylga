@@ -1,15 +1,14 @@
 services:
   - type: web
     name: argosbx
-    runtime: image
-    image:
-      url: docker.io/ygkkk/argosbx:latest
+    runtime: node
     plan: free
     region: singapore
+    rootDir: container/nodejs
+    buildCommand: npm install
+    startCommand: node index.js
     envVars:
       - key: uuid
         sync: false
       - key: DOMAIN
         sync: false
-      - key: NAME
-        value: argosbx
