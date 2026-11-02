@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: argosbx
+    runtime: image
+    image:
+      url: docker.io/ygkkk/argosbx:latest
+    plan: free
+    region: singapore
+    envVars:
+      - key: uuid
+        sync: false
+      - key: DOMAIN
+        sync: false
+      - key: NAME
+        value: argosbx
